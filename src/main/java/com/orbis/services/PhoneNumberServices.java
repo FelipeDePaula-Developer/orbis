@@ -2,7 +2,7 @@ package com.orbis.services;
 
 import com.orbis.entities.PhoneNumber;
 import com.orbis.repositories.PhoneNumberRepository;
-import com.orbis.services.services_interfaces.PhoneServicesInterface;
+import com.orbis.services.interfaces.PhoneServicesInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

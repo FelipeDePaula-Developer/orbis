@@ -1,4 +1,4 @@
-package com.orbis.services.services_interfaces;
+package com.orbis.services.interfaces;
 
 import java.util.regex.Pattern;
 

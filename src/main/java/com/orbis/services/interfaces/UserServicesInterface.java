@@ -1,4 +1,4 @@
-package com.orbis.services.services_interfaces;
+package com.orbis.services.interfaces;
 
 import com.orbis.entities.Credential;
 import com.orbis.entities.interfaces.Person;

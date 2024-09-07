@@ -29,6 +29,11 @@ public class PhoneNumber {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "idclient", referencedColumnName = "idclient")
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Client client;
+
     @Column(length = 3, name = "phone_ddi")
     private String phoneDDI;
 
