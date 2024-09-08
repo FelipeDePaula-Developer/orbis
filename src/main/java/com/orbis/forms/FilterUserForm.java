@@ -10,5 +10,5 @@ public class FilterUserForm {
     private String email;
     private String name;
     private String status;
-    private String insertTimestamp;
+    private String createdAt;
 }

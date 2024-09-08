@@ -6,6 +6,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity(name = "sys_user")
@@ -23,7 +24,15 @@ public class User implements Person {
 
     @Column(name = "insert_timestamp", updatable = false)
     @CreationTimestamp
-    private LocalDateTime insertTimestamp;
+    private LocalDateTime createdAt;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column
+    private Date updatedAt;
+    @PreUpdate
+    protected void onUpdate() {
+        updatedAt = new Date();
+    }
 
     @Column
     private String name;

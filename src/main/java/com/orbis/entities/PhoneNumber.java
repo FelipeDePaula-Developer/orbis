@@ -51,5 +51,5 @@ public class PhoneNumber {
 
     @Column(columnDefinition = "TIMESTAMP default CURRENT_TIMESTAMP", name = "insert_timestamp")
     @CreationTimestamp
-    private LocalDateTime insertTimestamp;
+    private LocalDateTime createdAt;
 }

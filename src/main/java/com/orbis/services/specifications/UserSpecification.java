@@ -28,10 +28,6 @@ public class UserSpecification {
                 predicates.add(cb.equal(root.get("status"), filterForm.getStatus()));
             }
 
-            if (filterForm.getInsertTimestamp() != null && !filterForm.getInsertTimestamp().isEmpty()) {
-                predicates.add(cb.greaterThanOrEqualTo(root.get("insertTimestamp"), filterForm.getInsertTimestamp()));
-            }
-
             return cb.and(predicates.toArray(new Predicate[0]));
         };
     }
