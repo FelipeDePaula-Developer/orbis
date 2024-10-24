@@ -8,6 +8,7 @@ public class PersonFormResult {
     private final List<ValidationError> userErrors = new ArrayList<>();
     private final List<ValidationError> credentialErrors = new ArrayList<>();
     private final List<ValidationError> phoneErrors = new ArrayList<>();
+    private final List<ValidationError> addressErrors = new ArrayList<>();
 
     public List<ValidationError> getUserErrors() {
         return new ArrayList<>(userErrors);
@@ -21,8 +22,7 @@ public class PersonFormResult {
         return new ArrayList<>(credentialErrors);
     }
 
-    public void addCredentialError(String field, String message) {
-        credentialErrors.add(new ValidationError(field, message));
+    public void addCredentialError(String field, String message) {credentialErrors.add(new ValidationError(field, message));
     }
 
     public List<ValidationError> getPhoneErrors() {
@@ -32,6 +32,10 @@ public class PersonFormResult {
     public void addPhoneError(String field, String message) {
         phoneErrors.add(new ValidationError(field, message));
     }
+
+    public List<ValidationError> getAddressErrors() {return new ArrayList<>(addressErrors); }
+
+    public void addAddressError(String field, String message) {addressErrors.add(new ValidationError(field, message));}
 
     public boolean hasErrors() {
         return !userErrors.isEmpty() || !credentialErrors.isEmpty() || !phoneErrors.isEmpty();

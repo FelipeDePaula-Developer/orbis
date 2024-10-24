@@ -7,7 +7,7 @@ import org.hibernate.annotations.OnDeleteAction;
 
 @Data
 @Entity
-public class Addresses {
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
