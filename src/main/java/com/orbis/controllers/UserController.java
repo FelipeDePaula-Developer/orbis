@@ -1,4 +1,4 @@
-package com.orbis.controlllers;
+package com.orbis.controllers;
 
 import com.orbis.entities.User;
 import com.orbis.forms.AuthUserForm;

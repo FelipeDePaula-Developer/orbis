@@ -21,10 +21,10 @@ import java.util.Date;
 
 @Data
 @Entity
-public class Debt {
+public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idDebt;
+    private Integer idContract;
 
     @ManyToOne
     @JoinColumn(name = "idclient", referencedColumnName = "idclient")

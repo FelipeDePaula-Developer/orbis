@@ -1,7 +1,14 @@
 package com.orbis.entities;
 
 import com.orbis.entities.interfaces.Person;
-import jakarta.persistence.*;
+import jakarta.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Column;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.PreUpdate;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.TemporalType;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 

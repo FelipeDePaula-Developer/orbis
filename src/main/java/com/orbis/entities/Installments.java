@@ -25,8 +25,8 @@ public class Installments {
     private Integer idInstallments;
 
     @ManyToOne
-    @JoinColumn(name = "iddebt", referencedColumnName = "iddebt")
-    private Debt debt;
+    @JoinColumn(name = "idcontract", referencedColumnName = "idcontract")
+    private Contract contract;
 
     @Column
     private DecimalFormat value;
