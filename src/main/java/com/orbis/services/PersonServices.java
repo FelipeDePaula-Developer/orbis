@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class UserServices implements UserServicesInterface, PhoneServicesInterface {
+public class PersonServices implements UserServicesInterface, PhoneServicesInterface {
 
     @Autowired
     private UserRepository userRepository;

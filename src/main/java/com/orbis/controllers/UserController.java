@@ -7,7 +7,7 @@ import com.orbis.forms.UserForm;
 import com.orbis.forms.results.PersonFormResult;
 import com.orbis.repositories.UserRepository;
 import com.orbis.services.CredentialServices;
-import com.orbis.services.UserServices;
+import com.orbis.services.PersonServices;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,13 +23,13 @@ import java.util.Optional;
 public class UserController {
 
 
-    private final UserServices userServices;
+    private final PersonServices personServices;
     private final CredentialServices authServices;
     private final UserRepository userRepository;
 
     @PostMapping("cad/user")
     public ResponseEntity<Object> cadUser(@RequestBody UserForm userForm) {
-        PersonFormResult personFormResult = userServices.registerUser(userForm);
+        PersonFormResult personFormResult = personServices.registerUser(userForm);
 
         if (personFormResult.hasErrors()) {
             return new ResponseEntity<>(personFormResult.getAllErrors(), HttpStatus.BAD_REQUEST);
@@ -67,6 +67,6 @@ public class UserController {
 
     @PostMapping("list/user")
     public Iterable<User> listUsers(@RequestBody FilterUserForm filterUserForm) {
-        return userServices.filterUsers(filterUserForm);
+        return personServices.filterUsers(filterUserForm);
     }
 }
