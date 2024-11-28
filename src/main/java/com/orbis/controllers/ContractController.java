@@ -1,5 +1,6 @@
 package com.orbis.controllers;
 
+import com.orbis.entities.Installments;
 import com.orbis.forms.ContractForm;
 import com.orbis.forms.results.ContractFormResult;
 import com.orbis.services.ContractServices;
@@ -10,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @AllArgsConstructor
@@ -24,8 +27,20 @@ public class ContractController {
         if (contractFormResult.hasErrors())
             return new ResponseEntity<>(contractFormResult.getContractErrors(), HttpStatus.BAD_REQUEST);
 
+        if (!contractForm.getInstallments().isEmpty()) {
+            return cadInstallments(contractForm);
+        }
 
-        return new ResponseEntity<>("Validation passed", HttpStatus.OK);
+        return new ResponseEntity<>("Contrato cadastrado", HttpStatus.OK);
     }
 
+    @PostMapping("cad/installments")
+    public ResponseEntity cadInstallments(@RequestBody ContractForm contractForm){
+        ContractFormResult contractFormResult = contractServices.registerInstallments(contractForm.getInstallments());
+
+        if (contractFormResult.hasErrors())
+            return new ResponseEntity<>(contractFormResult.getInstallmentsErrors(), HttpStatus.BAD_REQUEST);
+
+        return new ResponseEntity<>("Percelas cadastradas", HttpStatus.OK);
+    }
 }

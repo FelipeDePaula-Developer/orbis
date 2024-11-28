@@ -43,6 +43,9 @@ public class Installments {
     @Column
     private String status;
 
+    @Column
+    private Integer installmentNumber;
+
     @Column(columnDefinition = "CHAR(1)", length = 1)
     private String statusFlag;
 
